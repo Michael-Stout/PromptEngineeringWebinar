@@ -74,6 +74,7 @@ const promptTypes: PromptType[] = [
             label="Without Role"
             prompt="What should I invest in?"
             variant="bad"
+            tryUrl="https://chatgpt.com/?q=What+should+I+invest+in%3F"
           />
           <PromptExample
             label="With Role"

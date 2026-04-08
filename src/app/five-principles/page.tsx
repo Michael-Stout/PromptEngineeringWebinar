@@ -19,7 +19,7 @@ const principles: Principle[] = [
           Vague questions get vague answers. Add detail about what you want, who it&rsquo;s for, and what format you need.
         </p>
         <div className="grid grid-cols-2 gap-[0.8vw]">
-          <PromptExample label="Bad Prompt" prompt="Write me an email." variant="bad" />
+          <PromptExample label="Bad Prompt" prompt="Write me an email." variant="bad" tryUrl="https://chatgpt.com/?q=Write+me+an+email." />
           <PromptExample
             label="Good Prompt"
             prompt="Write a professional but friendly email to a client named Sarah, thanking her for attending our product demo and suggesting a follow-up call next Tuesday."
@@ -39,7 +39,7 @@ const principles: Principle[] = [
           Tell the AI who it should &ldquo;be&rdquo; and what background information it needs. This frames the entire response.
         </p>
         <div className="grid grid-cols-2 gap-[0.8vw] mb-[0.6vw]">
-          <PromptExample label="Without Role" prompt="Explain how to eat healthy." variant="bad" />
+          <PromptExample label="Without Role" prompt="Explain how to eat healthy." variant="bad" tryUrl="https://chatgpt.com/?q=Explain+how+to+eat+healthy." />
           <PromptExample
             label="With Role"
             prompt="You are a registered dietitian speaking to a busy parent who wants to meal prep on Sundays. Explain 3 simple strategies for eating healthier during the work week, using everyday grocery store ingredients."

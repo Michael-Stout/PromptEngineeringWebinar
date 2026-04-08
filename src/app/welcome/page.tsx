@@ -24,6 +24,7 @@ const reasons: Reason[] = [
             label="Vague Prompt"
             prompt="Write me something about marketing."
             variant="bad"
+            tryUrl="https://chatgpt.com/?q=Write+me+something+about+marketing."
           />
           <PromptExample
             label="Well-Crafted Prompt"
@@ -49,6 +50,7 @@ const reasons: Reason[] = [
             label="Keyword Style"
             prompt="AI marketing tips"
             variant="bad"
+            tryUrl="https://chatgpt.com/?q=AI+marketing+tips"
           />
           <PromptExample
             label="Engineered Prompt"
