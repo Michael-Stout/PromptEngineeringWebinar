@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary */
+  --background: #F7F9FC;
+  --foreground: #000000;
+  --white: #FFFFFF;
+
+  /* Brand — Blue (primary) */
+  --primary: #2B6CB0;
+  --primary-dark: #1E4D8C;
+
+  /* Brand — Orange (accent) */
+  --accent: #E8740C;
+  --accent-dark: #D45E00;
+  --accent-muted: #C85A00;
+
+  /* Tool indicators */
+  --tool-chatgpt: #10A37F;
+  --tool-claude: #D4A574;
+  --tool-copilot: #4A90D9;
+
+  /* Prompt comparison — Bad (Red) */
+  --red-accent: #D43030;
+  --red-bg: #FEECEC;
+  --red-border: #F0C8C8;
+  --red-text: #C43030;
+
+  /* Prompt comparison — Good (Green) */
+  --green-accent: #2D8E4E;
+  --green-muted: #1D8040;
+  --green-bg: #F0FAF3;
+  --green-border: #B0DFC0;
+
+  /* Highlight chips */
+  --chip-orange-bg: #FFF4E8;
+  --chip-orange-border: #F5D4A8;
+
+  /* Neutral / Structural */
+  --card-bg: #FFFFFF;
+  --card-border: #E4EAF0;
+  --goal-bg: #EDF2F8;
+  --goal-border: #D0DCEA;
+  --dot-pattern: #e0e6ed;
+  --divider: #D0DCEA;
+
+  /* Translucent */
+  --overlay-light: rgba(255, 255, 255, 0.22);
+  --overlay-lighter: rgba(255, 255, 255, 0.18);
+  --overlay-text: rgba(255, 255, 255, 0.92);
+
+  /* Shadows */
+  --shadow-card: 0 2px 6px rgba(26, 51, 82, 0.08);
+  --shadow-badge: 0 2px 4px rgba(232, 116, 12, 0.25);
+
+  /* Gradients */
+  --gradient-header: linear-gradient(to right, #2B6CB0, #1E4D8C, #2B6CB0);
+  --gradient-orange: linear-gradient(to right, #E8740C, #D45E00);
+  --gradient-blue: linear-gradient(to bottom, #2B6CB0, #1E4D8C);
+
+  /* Radii */
+  --radius-card: 12px;
+  --radius-badge: 10px;
+  --radius-pill: 14px;
+  --radius-chip: 6px;
+  --radius-edge-bar: 2.5px;
+
+  /* Muted text */
+  --muted: #5A6B7F;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-white: var(--white);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-muted: var(--accent-muted);
+  --color-tool-chatgpt: var(--tool-chatgpt);
+  --color-tool-claude: var(--tool-claude);
+  --color-tool-copilot: var(--tool-copilot);
+  --color-red-accent: var(--red-accent);
+  --color-red-bg: var(--red-bg);
+  --color-red-border: var(--red-border);
+  --color-red-text: var(--red-text);
+  --color-green-accent: var(--green-accent);
+  --color-green-muted: var(--green-muted);
+  --color-green-bg: var(--green-bg);
+  --color-green-border: var(--green-border);
+  --color-chip-orange-bg: var(--chip-orange-bg);
+  --color-chip-orange-border: var(--chip-orange-border);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-goal-bg: var(--goal-bg);
+  --color-goal-border: var(--goal-border);
+  --color-divider: var(--divider);
+  --color-muted: var(--muted);
+  --color-overlay-text: var(--overlay-text);
+  --font-sans: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background: #0a0a0a;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
