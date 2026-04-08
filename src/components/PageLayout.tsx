@@ -163,12 +163,6 @@ export function GoalBanner({ children }: { children: ReactNode }) {
         borderColor: "var(--goal-border)",
       }}
     >
-      <span
-        className="text-[0.65vw] font-bold uppercase tracking-[1.5px] mr-[0.5vw]"
-        style={{ color: "var(--primary)" }}
-      >
-        Goal:
-      </span>
       <span className="text-[0.9vw] text-foreground">{children}</span>
     </div>
   )

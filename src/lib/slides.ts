@@ -11,7 +11,7 @@ export interface SegmentGroup {
 }
 
 export const slides: SlideInfo[] = [
-  { path: "/", segment: "Outline", title: "Prompt Engineering", slideNumber: 1 },
+  { path: "/", segment: "Outline", title: "Welcome", slideNumber: 1 },
   { path: "/welcome", segment: "Outline", title: "Why It Matters", slideNumber: 2 },
   { path: "/tools", segment: "The Large Language Models", title: "The Large Language Models", slideNumber: 3 },
   { path: "/five-principles", segment: "The 5 Principles", title: "The 5 Principles", slideNumber: 4 },

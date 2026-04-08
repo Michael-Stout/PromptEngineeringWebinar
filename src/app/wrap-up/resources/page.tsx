@@ -1,16 +1,12 @@
-import Image from "next/image"
 
 export default function ResourcesSlide() {
   return (
     <div className="h-full flex flex-col items-center justify-center text-center">
       {/* TechSkills logo */}
-      <Image
+      <img
         src="/techskills-logo.png"
         alt="TechSkills — Future-Proofing Your Workforce"
-        width={400}
-        height={100}
         style={{ width: "20vw", height: "auto" }}
-        priority
       />
 
       {/* Divider */}
@@ -69,8 +65,11 @@ export default function ResourcesSlide() {
           borderColor: "var(--chip-orange-border)",
         }}
       >
-        <p className="text-[0.9vw] font-semibold italic" style={{ color: "var(--accent-muted)" }}>
-          &ldquo;The best prompt you&rsquo;ll ever write is your next one. Go try it.&rdquo;
+        <p className="text-[0.9vw] font-semibold italic" style={{ color: "#000000" }}>
+          In the Future there will be two types of People<br />
+          Those who use AI to do their jobs<br />
+          And those who do their jobs with AI<br />
+          <span className="mt-[0.5vw] block">Which one will you be?</span>
         </p>
       </div>
     </div>

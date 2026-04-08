@@ -7,8 +7,8 @@
   --white: #FFFFFF;
 
   /* Brand — Blue (primary) */
-  --primary: #2B6CB0;
-  --primary-dark: #1E4D8C;
+  --primary: #2F589E;
+  --primary-dark: #1E3D6E;
 
   /* Brand — Orange (accent) */
   --accent: #E8740C;
@@ -54,9 +54,9 @@
   --shadow-badge: 0 2px 4px rgba(232, 116, 12, 0.25);
 
   /* Gradients */
-  --gradient-header: linear-gradient(to right, #2B6CB0, #1E4D8C, #2B6CB0);
+  --gradient-header: linear-gradient(to right, #2F589E, #1E3D6E, #2F589E);
   --gradient-orange: linear-gradient(to right, #E8740C, #D45E00);
-  --gradient-blue: linear-gradient(to bottom, #2B6CB0, #1E4D8C);
+  --gradient-blue: linear-gradient(to bottom, #2F589E, #1E3D6E);
 
   /* Radii */
   --radius-card: 12px;

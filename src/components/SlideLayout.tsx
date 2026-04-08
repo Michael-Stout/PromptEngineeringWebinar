@@ -103,36 +103,30 @@ export function SlideLayout({ children }: SlideLayoutProps) {
             height: "4vw",
           }}
         >
-          {/* Left: logo + title */}
-          <div className="flex items-center gap-[0.8vw]">
+          {/* Left: logo */}
+          <div className="flex items-center">
             <img
-              src="/techskills-logo.png"
+              src="/techskills-logo-white.png"
               alt="TechSkills"
-              style={{ height: "2.4vw", width: "auto" }}
+              style={{ height: "2.1vw", width: "auto" }}
             />
-            <p className="text-[1.2vw] font-black uppercase tracking-[2px] text-white">
-              Prompt Engineering Webinar
-            </p>
           </div>
 
-          {/* Right: slide title + counter */}
-          <div className="flex items-center gap-[1vw]">
-            <span className="text-[0.9vw] font-extrabold text-white">
-              {current?.title}
-            </span>
-            <span
-              className="
-                text-[0.65vw] font-semibold text-white
-                px-[0.7vw] py-[0.25vw]
-              "
-              style={{
-                borderRadius: "var(--radius-pill)",
-                background: "var(--overlay-lighter)",
-              }}
-            >
-              {current?.slideNumber} / {totalSlides}
-            </span>
-          </div>
+          {/* Right: System Setup link */}
+          <Link
+            href="/setup"
+            className="
+              text-[0.65vw] font-semibold text-white
+              px-[0.7vw] py-[0.25vw]
+              hover:opacity-80 transition-opacity
+            "
+            style={{
+              borderRadius: "var(--radius-pill)",
+              background: "var(--overlay-lighter)",
+            }}
+          >
+            System Setup
+          </Link>
         </div>
 
         {/* Body: sidebar + content */}
@@ -148,6 +142,12 @@ export function SlideLayout({ children }: SlideLayoutProps) {
           >
             {/* Slide navigation */}
             <nav className="flex-1 overflow-y-auto px-[0.4vw] py-[0.5vw]">
+              <p
+                className="text-[0.7vw] font-bold uppercase tracking-[1.5px] px-[0.4vw] mb-[0.3vw]"
+                style={{ color: "var(--primary)" }}
+              >
+                Prompt Engineering Webinar
+              </p>
               {segmentGroups.map((group, i) => (
                 <NavGroup
                   key={i}
@@ -214,22 +214,9 @@ export function SlideLayout({ children }: SlideLayoutProps) {
                   </Link>
                 )}
               </div>
-              <div className="flex items-center gap-[0.2vw]">
-                {Array.from({ length: totalSlides }, (_, i) => (
-                  <div
-                    key={i}
-                    className="rounded-full transition-all"
-                    style={{
-                      width: i === (current?.slideNumber ?? 1) - 1 ? "0.9vw" : "0.3vw",
-                      height: "0.3vw",
-                      background:
-                        i === (current?.slideNumber ?? 1) - 1
-                          ? "var(--accent)"
-                          : "var(--card-border)",
-                    }}
-                  />
-                ))}
-              </div>
+              <span className="text-[0.7vw] font-semibold text-muted">
+                {current?.slideNumber} / {totalSlides}
+              </span>
               <div className="flex-1 text-right">
                 {next && (
                   <Link

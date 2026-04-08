@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 export default function TitleSlide() {
   return (
     <div className="h-full flex flex-col items-center justify-center text-center">
@@ -10,13 +8,10 @@ export default function TitleSlide() {
         Get Better Results from Large Language Models
       </p>
 
-      <Image
+      <img
         src="/techskills-logo.png"
-        alt="TechSkills"
-        width={400}
-        height={100}
+        alt="TechSkills — Future-Proofing Your Workforce"
         style={{ width: "16vw", height: "auto" }}
-        priority
       />
       <p className="text-[1.3vw] font-bold mt-[0.4vw]" style={{ color: "var(--primary)" }}>
         Michael Stout
