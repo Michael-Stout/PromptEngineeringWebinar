@@ -15,7 +15,7 @@ const prompts = [
   {
     category: "HR",
     prompt: "Write interview questions for a mid-level project manager role. Include 3 behavioral, 3 situational, and 3 technical questions with ideal answers.",
-    url: "https://chatgpt.com/?q=Write+interview+questions+for+a+mid-level+project+manager+role.+Include+3+behavioral%2C+3+situational%2C+and+3+technical+questions.+Add+what+a+strong+answer+looks+like+for+each.",
+    url: "https://chatgpt.com/?q=Write+interview+questions+for+a+mid-level+project+manager+role.+Include+3+behavioral%2C+3+situational%2C+and+3+technical+questions+with+ideal+answers.",
   },
   {
     category: "Education",

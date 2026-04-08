@@ -94,7 +94,7 @@ export default function InfographicSlide() {
           borderColor: "var(--chip-orange-border)",
         }}
       >
-        <p className="text-[0.7vw] font-semibold italic" style={{ color: "#000000" }}>
+        <p className="text-[0.7vw] font-semibold italic text-foreground">
           &ldquo;You don&rsquo;t need to be technical. Prompt engineering is just learning how to communicate clearly.&rdquo;
         </p>
       </div>

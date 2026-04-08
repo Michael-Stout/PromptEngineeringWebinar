@@ -9,7 +9,7 @@ export default function SystemSetupSlide() {
       <Card className="max-w-[45vw] w-full text-center">
         <p
           className="text-[0.9vw] mb-[1.5vw]"
-          style={{ color: "#000" }}
+          style={{ color: "var(--foreground)" }}
         >
           You can try the demos yourself in ChatGPT by installing an Extension for one of these browsers.
         </p>

@@ -2,11 +2,12 @@
 
 import type { ReactNode } from "react"
 import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { useEffect, Suspense } from "react"
 import {
   getAdjacentSlides,
   getSegmentGroups,
+  getSlideByPath,
   totalSlides,
   type SegmentGroup,
 } from "@/lib/slides"
@@ -58,10 +59,23 @@ function NavGroup({
 }
 
 export function SlideLayout({ children }: SlideLayoutProps) {
+  return (
+    <Suspense fallback={<div className="fixed inset-0 bg-[#0a0a0a]" />}>
+      <SlideLayoutInner>{children}</SlideLayoutInner>
+    </Suspense>
+  )
+}
+
+function SlideLayoutInner({ children }: SlideLayoutProps) {
   const pathname = usePathname()
   const router = useRouter()
+  const searchParams = useSearchParams()
   const { prev, next, current } = getAdjacentSlides(pathname)
   const segmentGroups = getSegmentGroups()
+
+  // For /setup page, use the "from" query param to create a back link
+  const fromPath = searchParams.get("from")
+  const setupBackSlide = fromPath ? getSlideByPath(fromPath) ?? { path: fromPath, title: "Back" } : null
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -114,7 +128,7 @@ export function SlideLayout({ children }: SlideLayoutProps) {
 
           {/* Right: System Setup link */}
           <Link
-            href="/setup"
+            href={`/setup?from=${pathname}`}
             className="
               text-[0.65vw] font-semibold text-white
               px-[0.7vw] py-[0.25vw]
@@ -162,10 +176,17 @@ export function SlideLayout({ children }: SlideLayoutProps) {
               className="shrink-0 px-[0.8vw] py-[0.8vw] border-t"
               style={{ borderColor: "var(--divider)" }}
             >
-              <p className="text-[1vw] font-bold text-foreground">Michael Stout</p>
+              <a
+                href="https://michaelstout.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[1vw] font-bold text-foreground hover:underline block"
+              >
+                Michael Stout
+              </a>
               <p className="text-[0.8vw] text-muted italic leading-snug mt-[0.2vw]">
-                If AI is the <em>New Electricity</em>,
-                isn&rsquo;t it time to <em>SuperCharge</em>?
+                If AI is the <em>New Electricity</em>,<br />
+                Isn&rsquo;t it time to <em>SuperCharge</em>?
               </p>
             </div>
           </aside>
@@ -200,7 +221,19 @@ export function SlideLayout({ children }: SlideLayoutProps) {
               }}
             >
               <div className="flex-1">
-                {prev && (
+                {pathname === "/setup" && setupBackSlide ? (
+                  <Link
+                    href={setupBackSlide.path}
+                    className="
+                      inline-flex items-center gap-[0.4vw]
+                      text-[0.8vw] font-semibold text-muted
+                      hover:text-primary transition-colors
+                    "
+                  >
+                    <span>&larr;</span>
+                    <span>{setupBackSlide.title ?? "Back"}</span>
+                  </Link>
+                ) : prev && (
                   <Link
                     href={prev.path}
                     className="
@@ -215,7 +248,7 @@ export function SlideLayout({ children }: SlideLayoutProps) {
                 )}
               </div>
               <span className="text-[0.7vw] font-semibold text-muted">
-                {current?.slideNumber} / {totalSlides}
+                {current?.slideNumber ?? ""} {current ? "/" : ""} {current ? totalSlides : ""}
               </span>
               <div className="flex-1 text-right">
                 {next && (

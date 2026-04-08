@@ -59,7 +59,7 @@ export default function ResourcesSlide() {
           borderColor: "var(--chip-orange-border)",
         }}
       >
-        <p className="text-[0.9vw] font-semibold italic" style={{ color: "#000000" }}>
+        <p className="text-[0.9vw] font-semibold italic text-foreground">
           In the Future there will be two types of People<br />
           Those who use AI to do their jobs<br />
           And those who do their jobs with AI<br />
