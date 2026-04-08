@@ -16,7 +16,7 @@ const promptTypes: PromptType[] = [
     content: (
       <>
         <p className="text-[0.75vw] text-muted mb-[0.6vw]">
-          Ask directly with no examples. Best for simple, well-defined tasks where the AI already understands the format.
+          Ask directly with no examples. Best for simple, well-defined tasks where the AI already understands the format. This works because modern LLMs have been trained on billions of examples already — for common tasks like translation, summarization, or Q&A, they don't need you to teach them the pattern.
         </p>
         <PromptExample
           label="Example"
@@ -33,7 +33,7 @@ const promptTypes: PromptType[] = [
     content: (
       <>
         <p className="text-[0.75vw] text-muted mb-[0.6vw]">
-          Provide 2-3 examples so the AI learns the pattern you want. Great for consistent formatting and style.
+          Provide 2-3 examples so the AI learns the pattern you want. This is powerful because it eliminates ambiguity — instead of describing what you want, you show it. The AI picks up on formatting, tone, length, and structure from your examples, producing far more consistent and predictable output.
         </p>
         <PromptExample
           label="Example"
@@ -50,7 +50,7 @@ const promptTypes: PromptType[] = [
     content: (
       <>
         <p className="text-[0.75vw] text-muted mb-[0.6vw]">
-          Ask the AI to reason step by step before answering. Improves accuracy on complex or multi-step problems.
+          Ask the AI to reason step by step before answering. This dramatically improves accuracy on math, logic, and multi-step problems because it forces the model to show its work rather than jumping to a conclusion. Studies show chain-of-thought prompting can improve accuracy by 20-40% on complex reasoning tasks.
         </p>
         <PromptExample
           label="Example"
@@ -67,7 +67,7 @@ const promptTypes: PromptType[] = [
     content: (
       <>
         <p className="text-[0.75vw] text-muted mb-[0.6vw]">
-          Assign a persona to shape tone, depth, and perspective. The AI adapts its expertise and language accordingly.
+          Assign a persona to shape tone, depth, and perspective. This works because it activates a specific subset of the model's training data — when you say "you are a doctor," the AI draws on medical knowledge and clinical communication patterns. The same question gets wildly different answers depending on the role you assign.
         </p>
         <div className="grid grid-cols-2 gap-[0.8vw]">
           <PromptExample
@@ -91,7 +91,7 @@ const promptTypes: PromptType[] = [
     content: (
       <>
         <p className="text-[0.75vw] text-muted mb-[0.6vw]">
-          Give a structure with blanks for the AI to complete. Perfect for repeatable tasks like emails, reports, or social posts.
+          Give a structure with blanks for the AI to complete. This is the most scalable prompt type — once you build a template that works, you can reuse it hundreds of times by swapping variables. It turns AI from a one-off tool into a repeatable system, saving massive time on recurring tasks like weekly reports, client emails, or social content.
         </p>
         <PromptExample
           label="Example"
@@ -108,7 +108,7 @@ const promptTypes: PromptType[] = [
     content: (
       <>
         <p className="text-[0.75vw] text-muted mb-[0.6vw]">
-          Start broad, then narrow with follow-up prompts. Treat it as a conversation, not a single command.
+          Start broad, then narrow with follow-up prompts. This is the most underrated technique because most people treat AI like a vending machine — one input, one output. But the best results come from a conversation. Each follow-up builds on context the AI already has, letting you steer toward exactly what you need without starting over.
         </p>
         <div className="space-y-[0.4vw]">
           <PromptExample label="Start" prompt="Write a blog intro about remote work." variant="neutral" tryUrl="https://chatgpt.com/?q=Write+a+blog+intro+about+remote+work." />
