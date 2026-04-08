@@ -18,10 +18,12 @@ export function PromptExample({
   label,
   prompt,
   variant = "neutral",
+  tryUrl,
 }: {
   label: string
   prompt: string
   variant?: "bad" | "good" | "neutral"
+  tryUrl?: string
 }) {
   const styles = {
     bad: {
@@ -62,15 +64,36 @@ export function PromptExample({
           borderRadius: "var(--radius-edge-bar)",
         }}
       />
-      <p
-        className="text-[0.55vw] font-extrabold uppercase tracking-[1.2px] mb-[0.4vw]"
-        style={{ color: s.labelColor }}
-      >
-        {label}
-      </p>
-      <p className="text-[0.85vw] font-semibold text-foreground italic leading-snug">
-        &ldquo;{prompt}&rdquo;
-      </p>
+      {label && (
+        <p
+          className="text-[0.55vw] font-extrabold uppercase tracking-[1.2px] mb-[0.4vw]"
+          style={{ color: s.labelColor }}
+        >
+          {label}
+        </p>
+      )}
+      <div className="flex items-start justify-between gap-[0.5vw]">
+        <p className="text-[0.85vw] text-foreground leading-snug">
+          {prompt}
+        </p>
+        {tryUrl && (
+          <a
+            href={tryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              shrink-0 text-[0.6vw] font-bold px-[0.5vw] py-[0.2vw]
+              text-white hover:opacity-90 transition-opacity
+            "
+            style={{
+              borderRadius: "var(--radius-pill)",
+              background: "var(--gradient-blue)",
+            }}
+          >
+            Try it &rarr;
+          </a>
+        )}
+      </div>
     </div>
   )
 }

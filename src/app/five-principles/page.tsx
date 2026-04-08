@@ -24,6 +24,7 @@ const principles: Principle[] = [
             label="Good Prompt"
             prompt="Write a professional but friendly email to a client named Sarah, thanking her for attending our product demo and suggesting a follow-up call next Tuesday."
             variant="good"
+            tryUrl="https://chatgpt.com/?q=Write+a+professional+but+friendly+email+to+a+client+named+Sarah%2C+thanking+her+for+attending+our+product+demo+and+suggesting+a+follow-up+call+next+Tuesday."
           />
         </div>
       </>
@@ -38,11 +39,12 @@ const principles: Principle[] = [
           Tell the AI who it should &ldquo;be&rdquo; and what background information it needs. This frames the entire response.
         </p>
         <div className="grid grid-cols-2 gap-[0.8vw] mb-[0.6vw]">
-          <PromptExample label="Without Role" prompt="Explain retirement accounts." variant="bad" />
+          <PromptExample label="Without Role" prompt="Explain how to eat healthy." variant="bad" />
           <PromptExample
             label="With Role"
-            prompt="You are a financial educator speaking to a 25-year-old who has never invested before. Explain the difference between a Roth IRA and a Traditional IRA in simple, jargon-free language."
+            prompt="You are a registered dietitian speaking to a busy parent who wants to meal prep on Sundays. Explain 3 simple strategies for eating healthier during the work week, using everyday grocery store ingredients."
             variant="good"
+            tryUrl="https://chatgpt.com/?q=You+are+a+registered+dietitian+speaking+to+a+busy+parent+who+wants+to+meal+prep+on+Sundays.+Explain+3+simple+strategies+for+eating+healthier+during+the+work+week%2C+using+everyday+grocery+store+ingredients."
           />
         </div>
         <Callout>
@@ -66,6 +68,7 @@ const principles: Principle[] = [
             label="Example Prompt"
             prompt="Here's an example of the tone I want: [paste example]. Now write a similar paragraph about [new topic]."
             variant="good"
+            tryUrl="https://chatgpt.com/?q=Here+is+an+example+of+the+tone+I+want%3A+%27We+don%27t+just+build+software%2C+we+solve+problems.%27+Now+write+a+similar+paragraph+about+AI+in+education."
           />
         </div>
         <Callout>

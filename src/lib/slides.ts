@@ -13,9 +13,9 @@ export interface SegmentGroup {
 export const slides: SlideInfo[] = [
   { path: "/", segment: "Outline", title: "Prompt Engineering", slideNumber: 1 },
   { path: "/welcome", segment: "Outline", title: "Why It Matters", slideNumber: 2 },
-  { path: "/five-principles", segment: "The 5 Principles", title: "The 5 Principles", slideNumber: 3 },
-  { path: "/five-principles/prompt-types", segment: "The 5 Principles", title: "Types of Prompts", slideNumber: 4 },
-  { path: "/tools", segment: "The Large Language Models", title: "The Large Language Models", slideNumber: 5 },
+  { path: "/tools", segment: "The Large Language Models", title: "The Large Language Models", slideNumber: 3 },
+  { path: "/five-principles", segment: "The 5 Principles", title: "The 5 Principles", slideNumber: 4 },
+  { path: "/five-principles/prompt-types", segment: "The 5 Principles", title: "Types of Prompts", slideNumber: 5 },
   { path: "/live-demo", segment: "Live Demo", title: "Live Demo & Practice", slideNumber: 6 },
   { path: "/five-principles/infographic", segment: "Wrap-Up", title: "Summary", slideNumber: 7 },
   { path: "/wrap-up/resources", segment: "Wrap-Up", title: "Thank You", slideNumber: 8 },

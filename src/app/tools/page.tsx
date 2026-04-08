@@ -131,6 +131,70 @@ const tools: Tool[] = [
   },
   {
     number: 3,
+    name: "Gemini",
+    maker: "Google",
+    color: "#4285F4",
+    url: "gemini.google.com",
+    content: (
+      <>
+        <p className="text-[0.75vw] text-muted mb-[0.6vw]">
+          Google&rsquo;s AI assistant with deep integration into Search, Gmail, Docs, and the broader Google ecosystem.
+        </p>
+        <BulletList
+          items={[
+            <>
+              <strong>Multimodal:</strong> Understands text, images, audio, and video in a single conversation.
+            </>,
+            <>
+              <strong>Google integration:</strong> Works with Gmail, Drive, Docs, and Maps for context-aware answers.
+            </>,
+            <>
+              <strong>Real-time search:</strong> Can pull in current information from the web.
+            </>,
+          ]}
+        />
+        <ModelTable models={[
+          { name: "Gemini 3.1 Pro", strength: "Current flagship. 2x predecessor on reasoning benchmarks. Deep analysis.", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" },
+          { name: "Gemini 3 Flash", strength: "Default model in Gemini app. Fast, intelligent, next-gen speed.", url: "https://deepmind.google/models/gemini/" },
+          { name: "Gemini 3.1 Flash Lite", strength: "Lightweight and cost-efficient. Best for high-volume and real-time use.", url: "https://ai.google.dev/gemini-api/docs/models" },
+          { name: "Gemini 3.1 Flash Live", strength: "Highest-quality voice and audio model for natural real-time dialogue.", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/" },
+        ]} />
+      </>
+    ),
+  },
+  {
+    number: 4,
+    name: "Grok",
+    maker: "xAI",
+    color: "#E84D39",
+    url: "grok.com",
+    content: (
+      <>
+        <p className="text-[0.75vw] text-muted mb-[0.6vw]">
+          Built by xAI with real-time access to X (Twitter) data and a direct, unfiltered communication style.
+        </p>
+        <BulletList
+          items={[
+            <>
+              <strong>Real-time information:</strong> Access to current events and trending topics via X integration.
+            </>,
+            <>
+              <strong>Direct style:</strong> Known for candid, less filtered responses compared to other LLMs.
+            </>,
+            <>
+              <strong>DeepSearch:</strong> Can perform extended research across multiple sources.
+            </>,
+          ]}
+        />
+        <ModelTable models={[
+          { name: "Grok 4.20", strength: "Flagship. Multi-agent system with 4 specialized agents working in parallel.", url: "https://x.ai/news" },
+          { name: "Grok 4.1", strength: "Strong emotional intelligence, creative tasks, 65% fewer hallucinations.", url: "https://x.ai/news" },
+        ]} />
+      </>
+    ),
+  },
+  {
+    number: 5,
     name: "Microsoft Copilot",
     maker: "Microsoft",
     color: "var(--tool-copilot)",
@@ -166,70 +230,6 @@ const tools: Tool[] = [
             Key difference: Copilot draws from your documents, emails, and calendars.
           </p>
         </Callout>
-      </>
-    ),
-  },
-  {
-    number: 4,
-    name: "Gemini",
-    maker: "Google",
-    color: "#4285F4",
-    url: "gemini.google.com",
-    content: (
-      <>
-        <p className="text-[0.75vw] text-muted mb-[0.6vw]">
-          Google&rsquo;s AI assistant with deep integration into Search, Gmail, Docs, and the broader Google ecosystem.
-        </p>
-        <BulletList
-          items={[
-            <>
-              <strong>Multimodal:</strong> Understands text, images, audio, and video in a single conversation.
-            </>,
-            <>
-              <strong>Google integration:</strong> Works with Gmail, Drive, Docs, and Maps for context-aware answers.
-            </>,
-            <>
-              <strong>Real-time search:</strong> Can pull in current information from the web.
-            </>,
-          ]}
-        />
-        <ModelTable models={[
-          { name: "Gemini 3.1 Pro", strength: "Current flagship. 2x predecessor on reasoning benchmarks. Deep analysis.", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" },
-          { name: "Gemini 3 Flash", strength: "Default model in Gemini app. Fast, intelligent, next-gen speed.", url: "https://deepmind.google/models/gemini/" },
-          { name: "Gemini 3.1 Flash Lite", strength: "Lightweight and cost-efficient. Best for high-volume and real-time use.", url: "https://ai.google.dev/gemini-api/docs/models" },
-          { name: "Gemini 3.1 Flash Live", strength: "Highest-quality voice and audio model for natural real-time dialogue.", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/" },
-        ]} />
-      </>
-    ),
-  },
-  {
-    number: 5,
-    name: "Grok",
-    maker: "xAI",
-    color: "#E84D39",
-    url: "grok.com",
-    content: (
-      <>
-        <p className="text-[0.75vw] text-muted mb-[0.6vw]">
-          Built by xAI with real-time access to X (Twitter) data and a direct, unfiltered communication style.
-        </p>
-        <BulletList
-          items={[
-            <>
-              <strong>Real-time information:</strong> Access to current events and trending topics via X integration.
-            </>,
-            <>
-              <strong>Direct style:</strong> Known for candid, less filtered responses compared to other LLMs.
-            </>,
-            <>
-              <strong>DeepSearch:</strong> Can perform extended research across multiple sources.
-            </>,
-          ]}
-        />
-        <ModelTable models={[
-          { name: "Grok 4.20", strength: "Flagship. Multi-agent system with 4 specialized agents working in parallel.", url: "https://x.ai/news" },
-          { name: "Grok 4.1", strength: "Strong emotional intelligence, creative tasks, 65% fewer hallucinations.", url: "https://x.ai/news" },
-        ]} />
       </>
     ),
   },
@@ -306,16 +306,7 @@ export default function ToolsSlide() {
                   <span className="text-[0.8vw] font-extrabold text-foreground block truncate">
                     {t.name}
                   </span>
-                  <a
-                    href={`https://${t.url}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[0.5vw] font-semibold hover:underline block truncate"
-                    style={{ color: "var(--primary)" }}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {t.url}
-                  </a>
+                  <span className="text-[0.55vw] text-muted">{t.maker}</span>
                 </div>
                 <span
                   className="text-[0.7vw] transition-transform shrink-0"
@@ -357,23 +348,15 @@ export default function ToolsSlide() {
                 <h2 className="text-[1.2vw] font-extrabold text-foreground">
                   {tools[active - 1].name}
                 </h2>
-                <span
-                  className="text-[0.6vw] font-bold ml-auto"
+                <a
+                  href={`https://${tools[active - 1].url}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[0.85vw] font-bold ml-auto hover:underline"
                   style={{ color: "var(--primary)" }}
                 >
                   {tools[active - 1].url}
-                </span>
-                <span
-                  className="text-[0.5vw] font-semibold px-[0.4vw] py-[0.1vw]"
-                  style={{
-                    borderRadius: "var(--radius-pill)",
-                    background: "var(--green-bg)",
-                    color: "var(--green-accent)",
-                    border: "1px solid var(--green-border)",
-                  }}
-                >
-                  Free tier
-                </span>
+                </a>
               </div>
               {tools[active - 1].content}
             </div>

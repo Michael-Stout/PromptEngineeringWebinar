@@ -11,8 +11,8 @@ export default function InfographicSlide() {
       number: 2,
       title: "Give Context & Role",
       summary: "Tell the AI who to be and what it needs to know",
-      bad: "Explain retirement accounts.",
-      good: "You are a financial educator speaking to a 25-year-old...",
+      bad: "Explain how to eat healthy.",
+      good: "You are a dietitian speaking to a busy parent...",
     },
     {
       number: 3,
@@ -176,7 +176,7 @@ function PrincipleCard({ principle: p }: PrincipleProps) {
             Avoid
           </p>
           <p className="text-[0.7vw] text-foreground italic leading-snug">
-            &ldquo;{p.bad}&rdquo;
+            {p.bad}
           </p>
         </div>
 
@@ -200,7 +200,7 @@ function PrincipleCard({ principle: p }: PrincipleProps) {
             Better
           </p>
           <p className="text-[0.7vw] text-foreground italic leading-snug">
-            &ldquo;{p.good}&rdquo;
+            {p.good}
           </p>
         </div>
       </div>

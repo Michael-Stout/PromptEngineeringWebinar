@@ -23,7 +23,7 @@ function NavGroup({
   pathname: string
 }) {
   return (
-    <div className="mb-[0.5vw]">
+    <div>
       {group.slides.map((slide) => {
         const isActive = pathname === slide.path
         return (
@@ -32,7 +32,7 @@ function NavGroup({
             href={slide.path}
             className="
               flex items-center gap-[0.3vw]
-              px-[0.4vw] py-[0.25vw] mb-[0.1vw]
+              px-[0.4vw] py-[0.3vw]
               transition-colors
             "
             style={{
@@ -100,44 +100,30 @@ export function SlideLayout({ children }: SlideLayoutProps) {
           "
           style={{
             background: "var(--gradient-header)",
-            height: "3.2vw",
+            height: "4vw",
           }}
         >
-          {/* Left: menu title */}
-          <div className="flex items-center gap-[1.2vw]">
-            <p className="text-[0.9vw] font-black uppercase tracking-[2px] text-white">
-              Prompt Engineering
-            </p>
-            <span
-              className="h-[1.4vw] w-[1px]"
-              style={{ background: "var(--overlay-light)" }}
+          {/* Left: logo + title */}
+          <div className="flex items-center gap-[0.8vw]">
+            <img
+              src="/techskills-logo.png"
+              alt="TechSkills"
+              style={{ height: "2.4vw", width: "auto" }}
             />
-            <p className="text-[0.7vw] font-semibold" style={{ color: "var(--overlay-text)" }}>
-              Webinar
+            <p className="text-[1.2vw] font-black uppercase tracking-[2px] text-white">
+              Prompt Engineering Webinar
             </p>
           </div>
 
-          {/* Right: slide info */}
+          {/* Right: slide title + counter */}
           <div className="flex items-center gap-[1vw]">
-            <span
-              className="
-                text-[0.55vw] font-bold uppercase tracking-[2px] text-white
-                px-[0.6vw] py-[0.2vw]
-              "
-              style={{
-                borderRadius: "var(--radius-pill)",
-                background: "var(--overlay-light)",
-              }}
-            >
-              {current?.segment}
-            </span>
-            <span className="text-[0.7vw] font-extrabold text-white">
+            <span className="text-[0.9vw] font-extrabold text-white">
               {current?.title}
             </span>
             <span
               className="
-                text-[0.55vw] font-semibold text-white
-                px-[0.6vw] py-[0.2vw]
+                text-[0.65vw] font-semibold text-white
+                px-[0.7vw] py-[0.25vw]
               "
               style={{
                 borderRadius: "var(--radius-pill)",
@@ -173,11 +159,11 @@ export function SlideLayout({ children }: SlideLayoutProps) {
 
             {/* Footer quote */}
             <div
-              className="shrink-0 px-[0.6vw] py-[0.6vw] border-t"
+              className="shrink-0 px-[0.8vw] py-[0.8vw] border-t"
               style={{ borderColor: "var(--divider)" }}
             >
-              <p className="text-[0.85vw] font-bold text-foreground">Michael Stout</p>
-              <p className="text-[0.7vw] text-muted italic leading-snug mt-[0.15vw]">
+              <p className="text-[1vw] font-bold text-foreground">Michael Stout</p>
+              <p className="text-[0.8vw] text-muted italic leading-snug mt-[0.2vw]">
                 If AI is the <em>New Electricity</em>,
                 isn&rsquo;t it time to <em>SuperCharge</em>?
               </p>
@@ -205,7 +191,7 @@ export function SlideLayout({ children }: SlideLayoutProps) {
             <div
               className="
                 relative shrink-0 flex items-center justify-between
-                px-[3%] py-[0.6%]
+                px-[3%] py-[1%]
                 border-t
               "
               style={{
@@ -219,7 +205,7 @@ export function SlideLayout({ children }: SlideLayoutProps) {
                     href={prev.path}
                     className="
                       inline-flex items-center gap-[0.4vw]
-                      text-[0.7vw] font-semibold text-muted
+                      text-[0.8vw] font-semibold text-muted
                       hover:text-primary transition-colors
                     "
                   >
@@ -250,7 +236,7 @@ export function SlideLayout({ children }: SlideLayoutProps) {
                     href={next.path}
                     className="
                       inline-flex items-center gap-[0.4vw]
-                      text-[0.7vw] font-semibold text-muted
+                      text-[0.8vw] font-semibold text-muted
                       hover:text-primary transition-colors
                     "
                   >
