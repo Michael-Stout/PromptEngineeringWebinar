@@ -3,26 +3,6 @@ import { SlideTitle, GoalBanner, PromptExample, Card } from "@/components/PageLa
 
 const prompts = [
   {
-    category: "HR",
-    prompt: "Write interview questions for a mid-level project manager role. Include 3 behavioral, 3 situational, and 3 technical questions with ideal answers.",
-    url: "https://chatgpt.com/?q=Write+interview+questions+for+a+mid-level+project+manager+role.+Include+3+behavioral%2C+3+situational%2C+and+3+technical+questions.+Add+what+a+strong+answer+looks+like+for+each.",
-  },
-  {
-    category: "Education",
-    prompt: "Create a 30-minute lesson plan for teaching 8th graders about the water cycle. Include a hands-on activity, discussion questions, and a quick assessment.",
-    url: "https://chatgpt.com/?q=Create+a+30-minute+lesson+plan+for+teaching+8th+graders+about+the+water+cycle.+Include+a+hands-on+activity%2C+discussion+questions%2C+and+a+quick+assessment.",
-  },
-  {
-    category: "Marketing",
-    prompt: "Write 3 versions of a Google Ad headline and description for an online yoga studio targeting busy professionals. Keep headlines under 30 characters.",
-    url: "https://chatgpt.com/?q=Write+3+versions+of+a+Google+Ad+headline+and+description+for+an+online+yoga+studio+targeting+busy+professionals.+Keep+headlines+under+30+characters.",
-  },
-  {
-    category: "Travel",
-    prompt: "Plan a 5-day trip to Tokyo for two people on a mid-range budget. Include daily itineraries, restaurant recommendations, transit tips, and estimated daily costs.",
-    url: "https://chatgpt.com/?q=Plan+a+5-day+trip+to+Tokyo+for+two+people+on+a+mid-range+budget.+Include+daily+itineraries%2C+restaurant+recommendations%2C+transit+tips%2C+and+estimated+daily+costs.",
-  },
-  {
     category: "Sales",
     prompt: "Write a cold outreach email to a VP of Marketing at a mid-size SaaS company. Pitch our AI content tool, mention a specific pain point, and include a clear CTA.",
     url: "https://chatgpt.com/?q=Write+a+cold+outreach+email+to+a+VP+of+Marketing+at+a+mid-size+SaaS+company.+Pitch+our+AI+content+tool%2C+mention+a+specific+pain+point%2C+and+include+a+clear+CTA.",
@@ -42,43 +22,45 @@ const prompts = [
     prompt: "Create a 10-slide outline for a presentation on why companies should adopt AI tools. Include slide titles, 3 bullet points each, and speaker notes.",
     url: "https://chatgpt.com/?q=Create+a+10-slide+outline+for+a+presentation+on+why+companies+should+adopt+AI+tools.+Include+slide+titles%2C+3+bullet+points+each%2C+and+speaker+notes+for+the+opening+and+closing.",
   },
+  {
+    category: "Legal",
+    prompt: "Summarize the key differences between an LLC and an S-Corp for a freelance graphic designer earning $120k/year. Include tax implications and liability protection.",
+    url: "https://chatgpt.com/?q=Summarize+the+key+differences+between+an+LLC+and+an+S-Corp+for+a+freelance+graphic+designer+earning+%24120k%2Fyear.+Include+tax+implications+and+liability+protection.",
+  },
+  {
+    category: "Productivity",
+    prompt: "I have 6 hours of free time on Saturday. Help me create a time-blocked schedule to clean the house, meal prep for the week, exercise, and read for 30 minutes.",
+    url: "https://chatgpt.com/?q=I+have+6+hours+of+free+time+on+Saturday.+Help+me+create+a+time-blocked+schedule+to+clean+the+house%2C+meal+prep+for+the+week%2C+exercise%2C+and+read+for+30+minutes.",
+  },
 ]
 
-export default function MoreExamplesSlide() {
+export default function LiveDemoPage3() {
   return (
     <div className="h-full flex flex-col">
       <div className="flex items-center justify-between mb-[0.3vw]">
-        <SlideTitle>More Examples</SlideTitle>
+        <SlideTitle>Live Demo & Practice</SlideTitle>
         <Link
-          href="/live-demo"
+          href="/live-demo/page2"
           className="text-[0.75vw] font-bold px-[0.8vw] py-[0.3vw] text-white hover:opacity-90 transition-opacity"
-          style={{
-            borderRadius: "var(--radius-pill)",
-            background: "var(--gradient-blue)",
-          }}
+          style={{ borderRadius: "var(--radius-pill)", background: "var(--gradient-blue)" }}
         >
           &larr; Back
         </Link>
       </div>
       <GoalBanner>
-        More prompts to try — click any &ldquo;Try it&rdquo; button to open it in ChatGPT.
+        Try these prompts live — click any &ldquo;Try it&rdquo; button to open it in ChatGPT.
       </GoalBanner>
 
-      <div className="flex-1 grid grid-cols-2 grid-rows-4 gap-[0.4vw] min-h-0">
+      <div className="flex-1 grid grid-cols-2 grid-rows-3 gap-[0.5vw] min-h-0">
         {prompts.map((p, i) => (
-          <Card key={i} className="flex flex-col p-[0.4vw]">
+          <Card key={i} className="flex flex-col p-[0.5vw]">
             <span
-              className="text-[0.45vw] font-bold uppercase tracking-[1.5px] mb-[0.2vw]"
+              className="text-[0.5vw] font-bold uppercase tracking-[1.5px] mb-[0.3vw]"
               style={{ color: "var(--primary)" }}
             >
               {p.category}
             </span>
-            <PromptExample
-              label=""
-              prompt={p.prompt}
-              variant="good"
-              tryUrl={p.url}
-            />
+            <PromptExample label="" prompt={p.prompt} variant="good" tryUrl={p.url} />
           </Card>
         ))}
       </div>

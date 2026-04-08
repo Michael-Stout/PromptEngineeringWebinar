@@ -32,16 +32,6 @@ const prompts = [
     prompt: "Write 5 LinkedIn post hooks about AI in the workplace. Each should be under 15 words, use a different angle, and start with a bold claim or question.",
     url: "https://chatgpt.com/?q=Write+5+LinkedIn+post+hooks+about+AI+in+the+workplace.+Each+should+be+under+15+words%2C+use+a+different+angle%2C+and+start+with+a+bold+claim+or+question.",
   },
-  {
-    category: "Coding",
-    prompt: "Write a Python script that reads a CSV file, removes duplicate rows, sorts by date column, and exports to a new file. Add comments explaining each step.",
-    url: "https://chatgpt.com/?q=Write+a+Python+script+that+reads+a+CSV+file%2C+removes+duplicate+rows%2C+sorts+by+date+column%2C+and+exports+to+a+new+file.+Add+comments+explaining+each+step.",
-  },
-  {
-    category: "Strategy",
-    prompt: "You are a business consultant. A local bakery wants to start selling online. Give a 5-step launch plan with timeline, estimated costs, and key risks.",
-    url: "https://chatgpt.com/?q=You+are+a+business+consultant.+A+local+bakery+wants+to+start+selling+online.+Give+a+5-step+launch+plan+with+timeline%2C+estimated+costs%2C+and+key+risks.",
-  },
 ]
 
 export default function LiveDemoSlide() {
@@ -50,35 +40,27 @@ export default function LiveDemoSlide() {
       <div className="flex items-center justify-between mb-[0.3vw]">
         <SlideTitle>Live Demo & Practice</SlideTitle>
         <Link
-          href="/live-demo/more"
+          href="/live-demo/page2"
           className="text-[0.75vw] font-bold px-[0.8vw] py-[0.3vw] text-white hover:opacity-90 transition-opacity"
-          style={{
-            borderRadius: "var(--radius-pill)",
-            background: "var(--gradient-blue)",
-          }}
+          style={{ borderRadius: "var(--radius-pill)", background: "var(--gradient-blue)" }}
         >
-          More &rarr;
+          Next &rarr;
         </Link>
       </div>
       <GoalBanner>
         Try these prompts live — click any &ldquo;Try it&rdquo; button to open it in ChatGPT.
       </GoalBanner>
 
-      <div className="flex-1 grid grid-cols-2 grid-rows-4 gap-[0.4vw] min-h-0">
+      <div className="flex-1 grid grid-cols-2 grid-rows-3 gap-[0.5vw] min-h-0">
         {prompts.map((p, i) => (
-          <Card key={i} className="flex flex-col p-[0.4vw]">
+          <Card key={i} className="flex flex-col p-[0.5vw]">
             <span
-              className="text-[0.45vw] font-bold uppercase tracking-[1.5px] mb-[0.2vw]"
+              className="text-[0.5vw] font-bold uppercase tracking-[1.5px] mb-[0.3vw]"
               style={{ color: "var(--primary)" }}
             >
               {p.category}
             </span>
-            <PromptExample
-              label=""
-              prompt={p.prompt}
-              variant="good"
-              tryUrl={p.url}
-            />
+            <PromptExample label="" prompt={p.prompt} variant="good" tryUrl={p.url} />
           </Card>
         ))}
       </div>

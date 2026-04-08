@@ -27,12 +27,20 @@ export function getSlideByPath(path: string): SlideInfo | undefined {
   return slides.find((s) => s.path === path)
 }
 
+// Map sub-pages to their parent slide for navigation
+const subPageMap: Record<string, string> = {
+  "/live-demo/page2": "/live-demo",
+  "/live-demo/page3": "/live-demo",
+}
+
 export function getAdjacentSlides(path: string) {
-  const index = slides.findIndex((s) => s.path === path)
+  const mappedPath = subPageMap[path] ?? path
+  const index = slides.findIndex((s) => s.path === mappedPath)
+  const current = index >= 0 ? { ...slides[index], path } : null
   return {
     prev: index > 0 ? slides[index - 1] : null,
     next: index < slides.length - 1 ? slides[index + 1] : null,
-    current: slides[index] ?? null,
+    current,
   }
 }
 
