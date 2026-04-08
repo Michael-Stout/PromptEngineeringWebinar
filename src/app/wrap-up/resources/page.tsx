@@ -9,14 +9,8 @@ export default function ResourcesSlide() {
         style={{ width: "20vw", height: "auto" }}
       />
 
-      {/* Divider */}
-      <div
-        className="w-[4vw] h-[0.2vw] my-[1.2vw]"
-        style={{ background: "var(--gradient-orange)", borderRadius: "2px" }}
-      />
-
       {/* Name */}
-      <p className="text-[1.6vw] font-black text-foreground">
+      <p className="text-[1.3vw] font-bold mt-[0.4vw]" style={{ color: "var(--primary)" }}>
         Michael Stout
       </p>
 
