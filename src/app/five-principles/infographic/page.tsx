@@ -173,7 +173,7 @@ function PrincipleCard({ principle: p }: PrincipleProps) {
             className="text-[0.6vw] font-extrabold uppercase tracking-[1px] mb-[0.05vw]"
             style={{ color: "var(--red-accent)" }}
           >
-            Avoid
+            Bad Prompt
           </p>
           <p className="text-[0.7vw] text-foreground italic leading-snug">
             {p.bad}
@@ -197,7 +197,7 @@ function PrincipleCard({ principle: p }: PrincipleProps) {
             className="text-[0.6vw] font-extrabold uppercase tracking-[1px] mb-[0.05vw]"
             style={{ color: "var(--green-accent)" }}
           >
-            Better
+            Good Prompt
           </p>
           <p className="text-[0.7vw] text-foreground italic leading-snug">
             {p.good}

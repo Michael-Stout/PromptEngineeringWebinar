@@ -72,9 +72,9 @@ const promptTypes: PromptType[] = [
         <div className="grid grid-cols-2 gap-[0.8vw]">
           <PromptExample
             label="Without Role"
-            prompt="What should I invest in?"
+            prompt="How do I improve my job postings?"
             variant="bad"
-            tryUrl="https://chatgpt.com/?q=What+should+I+invest+in%3F"
+            tryUrl="https://chatgpt.com/?q=How+do+I+improve+my+job+postings%3F"
           />
           <PromptExample
             label="With Role"

@@ -21,13 +21,13 @@ const reasons: Reason[] = [
         </p>
         <div className="grid grid-cols-2 gap-[0.8vw]">
           <PromptExample
-            label="Vague Prompt"
+            label="Bad Prompt"
             prompt="Write me something about marketing."
             variant="bad"
             tryUrl="https://chatgpt.com/?q=Write+me+something+about+marketing."
           />
           <PromptExample
-            label="Well-Crafted Prompt"
+            label="Good Prompt"
             prompt="Write a 200-word LinkedIn post for a B2B SaaS founder explaining 3 underrated content marketing strategies, with a conversational tone."
             variant="good"
             tryUrl="https://chatgpt.com/?q=Write+a+200-word+LinkedIn+post+for+a+B2B+SaaS+founder+explaining+3+underrated+content+marketing+strategies%2C+with+a+conversational+tone."
@@ -47,13 +47,13 @@ const reasons: Reason[] = [
         </p>
         <div className="grid grid-cols-2 gap-[0.8vw]">
           <PromptExample
-            label="Keyword Style"
+            label="Bad Prompt"
             prompt="AI marketing tips"
             variant="bad"
             tryUrl="https://chatgpt.com/?q=AI+marketing+tips"
           />
           <PromptExample
-            label="Engineered Prompt"
+            label="Good Prompt"
             prompt="You are a digital marketing strategist. Give me 5 specific ways a small e-commerce business can use AI to increase email open rates, with real tool recommendations."
             variant="good"
             tryUrl="https://chatgpt.com/?q=You+are+a+digital+marketing+strategist.+Give+me+5+specific+ways+a+small+e-commerce+business+can+use+AI+to+increase+email+open+rates%2C+with+real+tool+recommendations."
